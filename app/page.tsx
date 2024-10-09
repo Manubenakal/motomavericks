@@ -1,9 +1,11 @@
 import Image from 'next/image';
-
+import Header from '../components/Header';
+import Main from '../components/Main';
+import Footer from '../components/Footer';
 export default function Home() {
   return (
-    <div className="w-full h-screen bg-no-repeat bg-cover bg-center bg-[url('https://www.royalenfield.com/content/dam/royal-enfield/motorcycles/himalayan/gallery/webp/thumbnail/gallery-2.webp')]">
-      <header className='lg:px-16 px-4 flex flex-wrap items-center py-4 shadow-sm'>
+    <div className="w-full h-screen bg-no-repeat bg-cover bg-center bg-[url('https://www.royalenfield.com/content/dam/royal-enfield/india/rides/marquee-rides/himalayan-adventure-tibet-2024/banners/desktop/gear-banner-desktop.jpg')]">
+      {/* <header className='lg:px-16 px-4 flex flex-wrap items-center py-4 shadow-sm'>
         <div className='flex-1 flex justify-between items-center mix-blend-screen'>
           <a href='#' className='text-4xl text-gray-400 font-extrabold'>
             MOTOMAVERICKS
@@ -41,7 +43,7 @@ export default function Home() {
                 </a>
               </li>
               <li>
-                <a className='md:p-4 py-3 px-0 block' href='#'>
+                <a className='md:p-4 py-3 px-0 block' href='/about'>
                   About Us
                 </a>
               </li>
@@ -53,14 +55,15 @@ export default function Home() {
             </ul>
           </nav>
         </div>
-      </header>
+      </header> */}
+      <Header />
 
       <div className='w-[90%] mx-auto h-full flex items-center justify-between py-10'>
         <div className='lg:w-fit'>
           <div className='sm:text-6xl xs:text-5xl text-left text-white font-serif font-extrabold uppercase'>
             <h1></h1>
             <h1>MOTO</h1>
-            <h1 className='bg-black/30 text-white rounded-sm px-1 shadow-sm shadow-white/50'>
+            <h1 className='bg-black/30 text-white rounded-sm px-1'>
               MAVERICKS
             </h1>
           </div>
@@ -88,6 +91,8 @@ export default function Home() {
           </ul>
         </div>
       </div>
+      <Main />
+      <Footer />
     </div>
   );
 }
