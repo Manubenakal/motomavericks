@@ -4,22 +4,26 @@ import React from 'react';
 export default function Header() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   const [flyer, setFlyer] = React.useState(false);
-  const [flyerTwo, setFlyerTwo] = React.useState(false);
 
   return (
-    <header className='fixed top-0 w-full clearNav z-50'>
-      <div className='max-w-5xl mx-auto flex flex-wrap p-5 flex-col md:flex-row'>
-        <div className='flex flex-row items-center justify-between p-3 md:p-1'>
-          <a
-            href='/'
-            className='flex text-3xl text-white font-serif font-extrabold uppercase mb-4 md:mb-0'
-          >
-            MOTOMAVERICKS
+    <header className='fixed top-0 w-full clearNav z-50 bg-gray-800'>
+      <div className='max-w-5xl mx-auto flex flex-wrap p-4'>
+        {/* Logo and menu toggle button */}
+        <div className='flex justify-between items-center w-full'>
+          <a href='/' className='flex items-center'>
+            <img
+              src='/images/moto-logo.png'
+              alt='MotoMavericks Logo'
+              className='w-10 h-10 rounded-full mr-2'
+            />
+            <span className='text-2xl md:text-3xl text-white font-serif font-extrabold uppercase'>
+              MOTOMAVERICKS
+            </span>
           </a>
           <button
-            className='text-white pb-4 cursor-pointer leading-none px-3 py-1 md:hidden outline-none focus:outline-none content-end ml-auto'
+            className='text-white md:hidden'
             type='button'
-            aria-label='button'
+            aria-label='Toggle menu'
             onClick={() => setNavbarOpen(!navbarOpen)}
           >
             <svg
@@ -40,31 +44,30 @@ export default function Header() {
             </svg>
           </button>
         </div>
+
+        {/* Navigation items */}
         <div
-          className={
-            'md:flex flex-grow items-center' +
-            (navbarOpen ? ' flex' : ' hidden')
-          }
+          className={`${
+            navbarOpen ? 'flex' : 'hidden'
+          } md:flex flex-grow items-center justify-between w-full mt-2`}
         >
-          <div className='md:ml-auto md:mr-auto font-4 pt-1 md:pl-14 pl-1 flex flex-wrap items-center md:text-base text-1xl md:justify-center justify-items-start'>
+          <div className='font-4 pt-1 md:pl-14 pl-1 flex flex-col md:flex-row items-center md:text-base text-1xl'>
             <a className='mr-11 pr-2 cursor-pointer text-gray-300 hover:text-white font-semibold tr04'>
               Features
             </a>
+
+            {/* Dropdown for 'Places we've been to' */}
             <div className='relative'>
               <button
                 type='button'
-                className="
-                   group rounded-md text-gray-300 inline-flex items-center text-base font-bold focus:outline-none pb-8'
-                  "
-                onMouseEnter={() => (setFlyer(!flyer), setFlyerTwo(false))}
+                className='group rounded-md text-gray-300 inline-flex items-center text-base font-bold focus:outline-none'
+                onMouseEnter={() => setFlyer(!flyer)}
               >
                 <span className='tr04'>Places we've been to</span>
                 <svg
-                  className={
-                    flyer === true
-                      ? 'transform rotate-180 ml-3 h-5 w-5 transition ease-out duration-200'
-                      : 'ml-2 h-5 w-5 text-gray-400 group-hover:text-gray-500'
-                  }
+                  className={`${
+                    flyer ? 'transform rotate-180' : ''
+                  } ml-2 h-5 w-5 transition-transform duration-200`}
                   xmlns='http://www.w3.org/2000/svg'
                   viewBox='0 0 20 20'
                   fill='currentColor'
@@ -77,113 +80,70 @@ export default function Header() {
                   />
                 </svg>
               </button>
-              <div
-                onMouseLeave={() => setFlyer(false)}
-                className={
-                  flyer
-                    ? 'opacity-100 translate-y-0 transition ease-out duration-200 absolute z-10 -ml-4 mt-3 g327 border transform px-2 w-screen max-w-sm sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2'
-                    : 'hidden opacity-0 translate-y-1 absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2'
-                }
-              >
-                <div className='rounded-lg shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden'>
-                  <div className='relative grid gap-6 bg-black px-2 py-6 sm:gap-8 '>
+
+              {/* Dropdown menu with improved styling */}
+              {flyer && (
+                <div
+                  onMouseLeave={() => setFlyer(false)}
+                  className='absolute z-10 mt-2 w-48 bg-gray-800 rounded-lg shadow-lg'
+                >
+                  <div className='p-3'>
                     <a
-                      href='/'
-                      className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 tr04'
+                      href='/coorg'
+                      className='block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded transition duration-200'
                     >
-                      <div className='ml-4'>
-                        <p className='text-base font-medium text-white'>
-                          NINE4 TEMPLATE #1
-                        </p>
-                        <p className='mt-1 text-sm text-gray-500'>
-                          First Template
-                        </p>
-                      </div>
+                      Coorg
                     </a>
                     <a
-                      href='/'
-                      className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 tr04'
+                      href='/wayanad-ooty'
+                      className='block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded transition duration-200'
                     >
-                      <div className='ml-4'>
-                        <p className='text-base font-medium text-white'>
-                          NINE4 TEMPLATE #2
-                        </p>
-                        <p className='mt-1 text-sm text-gray-500'>
-                          Second Template
-                        </p>
-                      </div>
+                      Wayanad-Ooty
                     </a>
                     <a
-                      href='/'
-                      className='-m-3 p-3 flex items-start rounded-lg hover:bg-gray-800 tr04'
+                      href='/kodaikanal-munnar'
+                      className='block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded transition duration-200'
                     >
-                      <div className='ml-4'>
-                        <p className='text-base font-medium text-white'>
-                          NINE4 TEMPLATE #3
-                        </p>
-                        <p className='mt-1 text-sm text-gray-500'>
-                          Third Template
-                        </p>
-                      </div>
+                      Kodaikanal-Munnar
+                    </a>
+                    <a
+                      href='/chikmagaluru'
+                      className='block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded transition duration-200'
+                    >
+                      Chikmagaluru
                     </a>
                   </div>
                 </div>
-              </div>
+              )}
             </div>
-            <a class='mr-12 md:ml-11 ml-0 cursor-pointer text-gray-300 hover:text-white font-semibold tr04'>
-              Pric
-            </a>
-            <a class='mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04'>
+
+            <a
+              href='/about'
+              className='mr-5 cursor-pointer text-gray-300 hover:text-white font-semibold tr04'
+            >
               About Us
             </a>
           </div>
-          <a
-            href='https://twitter.com/'
-            rel='noopener noreferrer'
-            target='_blank'
-            className='invisible md:visible'
-          >
-            <svg
-              title='Twitter'
-              width='30'
-              height='17'
-              viewBox='0 0 50 40'
-              xmlns='http://www.w3.org/2000/svg'
-              fill='none'
+
+          {/* Instagram Icon */}
+          <div className='flex items-center space-x-4 mt-4 md:mt-0'>
+            <a
+              href='https://instagram.com/motomaveriicks'
+              target='_blank'
+              rel='noopener noreferrer'
+              className='inline-block'
             >
-              <path
-                data-v-54e46119=''
-                d='M15.4528 40C34.0158 40 44.1732 24.6063 44.1732 11.2796C44.1732 10.8465 44.1732 10.4134 44.1536 9.98031C46.122 8.56299 47.8347 6.77166 49.1929 4.74409C47.3819 5.55118 45.4331 6.08268 43.3858 6.33858C45.4724 5.09842 47.0669 3.11023 47.8347 0.74803C45.8858 1.90944 43.7204 2.73622 41.4173 3.18898C39.5669 1.22047 36.9488 0 34.0551 0C28.4842 0 23.9567 4.52756 23.9567 10.0984C23.9567 10.8858 24.0551 11.6536 24.2126 12.4016C15.8268 11.9882 8.38582 7.95276 3.40551 1.85039C2.53937 3.34646 2.04724 5.07874 2.04724 6.92913C2.04724 10.4331 3.83859 13.5237 6.53543 15.3347C4.88189 15.2756 3.32677 14.8228 1.9685 14.0748C1.9685 14.1142 1.9685 14.1536 1.9685 14.2126C1.9685 19.0944 5.45276 23.189 10.0591 24.1142C9.2126 24.3504 8.32677 24.4686 7.40158 24.4686C6.75197 24.4686 6.12204 24.4094 5.51181 24.2913C6.79133 28.3071 10.5315 31.2204 14.9409 31.2992C11.4763 34.0158 7.12599 35.6299 2.40158 35.6299C1.59449 35.6299 0.787401 35.5906 0 35.4921C4.44882 38.3268 9.76378 40 15.4528 40Z'
+              <svg
+                width='24'
+                height='24'
+                xmlns='http://www.w3.org/2000/svg'
+                viewBox='0 0 24 24'
                 fill='white'
-              ></path>
-            </svg>
-          </a>
-          <a
-            data-v-54e46119=''
-            href='https://github.com/'
-            rel='noopener noreferrer'
-            target='_blank'
-            className='pl-7 invisible md:visible'
-          >
-            <svg
-              data-v-54e46119=''
-              width='30'
-              height='20'
-              viewBox='0 0 25 24'
-              fill='none'
-              xmlns='http://www.w3.org/2000/svg'
-              title='GitHub logo'
-              class='github-link--logo'
-            >
-              <path
-                data-v-54e46119=''
-                fill-rule='evenodd'
-                clip-rule='evenodd'
-                d='M12.3019 0C5.50526 0 0 5.50526 0 12.3019C0 17.7392 3.52669 22.3458 8.4127 23.977C9.0244 24.0902 9.25095 23.7126 9.25095 23.3804C9.25095 23.0858 9.2434 22.3156 9.23585 21.2885C5.81488 22.0286 5.08991 19.6422 5.08991 19.6422C4.53108 18.2225 3.72304 17.8373 3.72304 17.8373C2.60537 17.0746 3.80611 17.0897 3.80611 17.0897C5.03705 17.1803 5.69405 18.3584 5.69405 18.3584C6.78906 20.2388 8.57129 19.6951 9.27361 19.3779C9.38688 18.585 9.70406 18.0412 10.0514 17.7316C7.32524 17.4295 4.45556 16.3723 4.45556 11.66C4.45556 10.3158 4.93132 9.22074 5.72426 8.35984C5.59588 8.04266 5.17298 6.79662 5.83754 5.10501C5.83754 5.10501 6.87213 4.77274 9.22074 6.36616C10.2025 6.0943 11.2522 5.95837 12.3019 5.95082C13.344 5.95837 14.4013 6.0943 15.383 6.36616C17.7316 4.77274 18.7662 5.10501 18.7662 5.10501C19.4383 6.79662 19.0154 8.05021 18.887 8.35984C19.6724 9.22074 20.1482 10.3158 20.1482 11.66C20.1482 16.3874 17.271 17.422 14.5297 17.7316C14.9677 18.1092 15.3679 18.8644 15.3679 20.0123C15.3679 21.6586 15.3528 22.9801 15.3528 23.3879C15.3528 23.7202 15.5718 24.0978 16.1986 23.977C21.0846 22.3458 24.6038 17.7392 24.6038 12.3094C24.6038 5.50526 19.0985 0 12.3019 0Z'
-                fill='white'
-              ></path>
-            </svg>
-          </a>
+              >
+                <path d='M12 2.2c3.2 0 3.6 0 4.9.1 1.3.1 2.1.3 2.6.5.7.3 1.2.7 1.7 1.2.5.5.9 1 1.2 1.7.3.5.5 1.3.5 2.6.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.3-.3 2.1-.5 2.6-.3.7-.7 1.2-1.2 1.7-.5.5-1 1-1.7 1.2-.5.3-1.3.5-2.6.5-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.3-.1-2.1-.3-2.6-.5-.7-.3-1.2-.7-1.7-1.2-.5-.5-1-1-1.2-1.7-.3-.5-.5-1.3-.5-2.6-.1-1.3-.1-1.7-.1-4.9s0-3.6.1-4.9c.1-1.3.3-2.1.5-2.6.3-.7.7-1.2 1.2-1.7.5-.5 1-1 1.7-1.2.5-.3 1.3-.5 2.6-.5C8.4 2.2 8.8 2.2 12 2.2M12 0C8.7 0 8.3 0 7 .1 5.7.1 4.6.3 3.8.7c-.8.4-1.5.8-2.2 1.5C.9 3.9.5 4.6.1 5.4c-.4.8-.6 1.9-.7 3.2C-.1 9.7-.1 10.1-.1 13.4c0 3.3 0 3.7.1 5 .1 1.3.3 2.4.7 3.2.4.8.8 1.5 1.5 2.2.7.7 1.4 1.1 2.2 1.5.8.4 1.9.6 3.2.7 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.4-.3 3.2-.7.8-.4 1.5-.8 2.2-1.5.7-.7 1.1-1.4 1.5-2.2.4-.8.6-1.9.7-3.2.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.4-.7-3.2-.4-.8-.8-1.5-1.5-2.2-.7-.7-1.4-1.1-2.2-1.5-.8-.4-1.9-.6-3.2-.7C15.7.1 15.3 0 12 0m0 5.8c-3.5 0-6.4 2.9-6.4 6.4s2.9 6.4 6.4 6.4 6.4-2.9 6.4-6.4-2.9-6.4-6.4-6.4m0 10c-2 0-3.6-1.6-3.6-3.6 0-2 1.6-3.6 3.6-3.6 2 0 3.6 1.6 3.6 3.6 0 2-1.6 3.6-3.6 3.6m4.9-10.4c-.9 0-1.6-.7-1.6-1.6s.7-1.6 1.6-1.6c.9 0 1.6.7 1.6 1.6s-.7 1.6-1.6 1.6z' />
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </header>

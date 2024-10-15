@@ -2,101 +2,44 @@ import Image from 'next/image';
 import Header from '../components/Header';
 import Main from '../components/Main';
 import Footer from '../components/Footer';
+
 export default function Home() {
   return (
-    <div className="w-full h-screen bg-no-repeat bg-cover bg-center bg-[url('https://www.royalenfield.com/content/dam/royal-enfield/india/rides/marquee-rides/himalayan-adventure-tibet-2024/banners/desktop/gear-banner-desktop.jpg')]">
-      {/* <header className='lg:px-16 px-4 flex flex-wrap items-center py-4 shadow-sm'>
-        <div className='flex-1 flex justify-between items-center mix-blend-screen'>
-          <a href='#' className='text-4xl text-gray-400 font-extrabold'>
-            MOTOMAVERICKS
-          </a>
-        </div>
-
-        <label htmlFor='menu-toggle' className='pointer-cursor md:hidden block'>
-          <svg
-            className='fill-current text-gray-600'
-            xmlns='http://www.w3.org/2000/svg'
-            width='20'
-            height='20'
-            viewBox='0 0 20 20'
-          >
-            <title>menu</title>
-            <path d='M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z'></path>
-          </svg>
-        </label>
-        <input className='hidden' type='checkbox' id='menu-toggle' />
-
-        <div
-          className='hidden md:flex md:items-center md:w-auto w-full'
-          id='menu'
-        >
-          <nav>
-            <ul className='md:flex items-center justify-between text-base text-white pt-4 md:pt-0'>
-              <li>
-                <a className='md:p-4 py-3 px-0 block' href='#'>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a className='md:p-4 py-3 px-0 block' href='#'>
-                  Services
-                </a>
-              </li>
-              <li>
-                <a className='md:p-4 py-3 px-0 block' href='/about'>
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a className='md:p-4 py-3 px-0 block md:mb-0 mb-2' href='#'>
-                  Contact
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </header> */}
+    <div className="relative w-full h-screen bg-no-repeat bg-cover bg-center bg-[url('https://www.royalenfield.com/content/dam/royal-enfield/india/rides/marquee-rides/himalayan-adventure-tibet-2024/banners/desktop/gear-banner-desktop.jpg')]">
       <Header />
 
-      <div className='w-[90%] mx-auto h-full flex items-center justify-between py-10'>
-        <div className='lg:w-fit'>
-          <div className='sm:text-6xl xs:text-5xl text-left text-white font-serif font-extrabold uppercase'>
-            <h1></h1>
-            <h1>MOTO</h1>
-            <h1 className='bg-black/30 text-white rounded-sm px-1'>
-              MAVERICKS
-            </h1>
-          </div>
-
-          <p className='text-md text-white bg-black/30 font-semibold mt-1 capitalize rounded-lg p-2'>
-            SINCE 2023
-          </p>
+      {/* Hero Section */}
+      <div className='flex flex-col justify-end items-center h-full p-4 lg:p-10'>
+        <div className='text-4xl md:text-6xl lg:text-7xl font-serif font-extrabold text-white uppercase text-center'>
+          <h1 className='mb-1'>MOTOMAVERICKS</h1>
         </div>
+        <p className='text-sm sm:text-md text-white bg-black/30 font-semibold mt-2 capitalize rounded-lg p-2'>
+          SINCE 2023
+        </p>
 
-        <div>
-          <ul className='text-3xl text-white'>
-            <li className='flex justify-center items-center p-1 bg-black/40 rounded-full'>
+        <div className='mt-6'>
+          <ul className='flex space-x-4 text-2xl sm:text-3xl text-white'>
+            <li className='flex justify-center items-center p-2 bg-black/40 rounded-full'>
               {/* <ion-icon name="logo-facebook"></ion-icon> */}
             </li>
-            <li className='flex justify-center items-center p-1 bg-black/40 rounded-full mt-2'>
+            <li className='flex justify-center items-center p-2 bg-black/40 rounded-full'>
               {/* <ion-icon name="logo-instagram"></ion-icon> */}
             </li>
-            <li className='flex justify-center items-center p-1 bg-black/40 rounded-full mt-2'>
-              {/* <ion-icon name="logo-whatsapp"></ion-icon>
-                  </ion-icon> */}
+            <li className='flex justify-center items-center p-2 bg-black/40 rounded-full'>
+              {/* <ion-icon name="logo-whatsapp"></ion-icon> */}
             </li>
-            <li className='flex justify-center items-center p-1 bg-black/40 rounded-full mt-2'>
+            <li className='flex justify-center items-center p-2 bg-black/40 rounded-full'>
               {/* <ion-icon name="person-circle-outline"></ion-icon> */}
             </li>
           </ul>
         </div>
       </div>
-      <Main />
-      <Footer />
+
+      {/* Main Component Wrapper with Black Background */}
+      <div className='bg-black'>
+        <Main />
+        <Footer />
+      </div>
     </div>
   );
-}
-{
-  /* <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> */
 }
