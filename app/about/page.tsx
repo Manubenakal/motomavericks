@@ -28,10 +28,6 @@ const AboutPage = () => {
             we embrace the unknown and celebrate the journey as much as the
             destination.
           </p>
-          <p className='text-lg leading-relaxed'>
-            We are strategists, designers, and developers. Innovators and
-            problem solvers. Small enough to be simple and quick.
-          </p>
         </div>
 
         {/* Image Section */}
@@ -39,28 +35,28 @@ const AboutPage = () => {
           <div className='overflow-hidden transition-transform transform hover:scale-105 duration-300'>
             <img
               className='w-full h-48 md:h-64 object-cover rounded-lg shadow-lg'
-              src='https://media.licdn.com/dms/image/v2/D5603AQFLOnjH0nb7Ew/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1693127627041?e=1733356800&v=beta&t=QPwFo0MfCFNiBHfWgXnYCiDzONPPb84THK8VJ0PjIVs'
+              src='/images/about4.jpeg'
               alt='MotoMavericks Community'
             />
           </div>
           <div className='overflow-hidden transition-transform transform hover:scale-105 duration-300'>
             <img
               className='w-full h-48 md:h-64 object-cover rounded-lg shadow-lg'
-              src='https://flowbite.s3.amazonaws.com/blocks/marketing-ui/content/office-long-1.png'
+              src='/images/about3.jpeg'
               alt='MotoMavericks Activities'
             />
           </div>
           <div className='overflow-hidden transition-transform transform hover:scale-105 duration-300'>
             <img
               className='w-full h-48 md:h-64 object-cover rounded-lg shadow-lg'
-              src='https://images.pexels.com/photos/1618896/pexels-photo-1618896.jpeg?auto=compress&cs=tinysrgb&w=600'
+              src='/images/about2.jpeg'
               alt='Scenic Ride 1'
             />
           </div>
           <div className='overflow-hidden transition-transform transform hover:scale-105 duration-300'>
             <img
               className='w-full h-48 md:h-64 object-cover rounded-lg shadow-lg'
-              src='https://images.pexels.com/photos/2105853/pexels-photo-2105853.jpeg?auto=compress&cs=tinysrgb&w=600'
+              src='/images/about1.jpeg'
               alt='Scenic Ride 2'
             />
           </div>

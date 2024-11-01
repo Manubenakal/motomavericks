@@ -39,12 +39,12 @@ const Page = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6'>
             {/* Placeholder for gallery images */}
             <img
-              src='/images/moto-logo.png'
+              src='/images/kk3.jpeg'
               alt='Coorg Image 1'
               className='w-full h-auto rounded-lg'
             />
             <img
-              src='/images/moto-logo.png'
+              src='/images/coorg2.jpeg'
               alt='Coorg Image 2'
               className='w-full h-auto rounded-lg'
             />
