@@ -9,31 +9,25 @@ const Footer = () => {
           <img
             src='/images/moto-logo.png'
             alt='MotoMavericks Logo'
-            className='mr-2 h-10' // Increased logo height for better visibility
+            className='mr-2 h-10 rounded-full' // Increased logo height for better visibility
           />
           MOTOMAVERICKS
         </a>
 
         <ul className='flex flex-wrap justify-center items-center mb-6 text-white'>
           <li className='mr-6'>
-            <a href='#' className='hover:underline'>
+            <a href='/about' className='hover:underline'>
               About
             </a>
           </li>
           <li className='mr-6'>
             <a href='#' className='hover:underline'>
-              Places we have been to
+              Places we went
             </a>
           </li>
           <li className='mr-6'>
             <a href='#' className='hover:underline'>
-              Campaigns
-            </a>
-          </li>
-
-          <li className='mr-6'>
-            <a href='#' className='hover:underline'>
-              Contact
+              Gallery
             </a>
           </li>
         </ul>
