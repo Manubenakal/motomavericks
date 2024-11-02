@@ -13,9 +13,7 @@ export default function Home() {
         <div className='text-4xl md:text-6xl lg:text-7xl font-serif font-extrabold text-white uppercase text-center'>
           <h1 className='mb-1'>MOTOMAVERICKS</h1>
         </div>
-        <p className='text-sm sm:text-md text-white bg-black/30 font-semibold mt-2 capitalize rounded-lg p-2'>
-          SINCE 2023
-        </p>
+       
       </div>
 
       {/* Main Component Wrapper with Black Background */}
