@@ -126,6 +126,20 @@ export default function Header() {
                       onClick={() => setNavbarOpen(false)}
                     >
                       Chikmagaluru
+                    </a>{' '}
+                    <a
+                      href='/sikkim'
+                      className='block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded transition duration-200'
+                      onClick={() => setNavbarOpen(false)}
+                    >
+                      Sikkim
+                    </a>{' '}
+                    <a
+                      href='/coastal-ride'
+                      className='block px-4 py-2 text-sm text-white hover:bg-gray-700 rounded transition duration-200'
+                      onClick={() => setNavbarOpen(false)}
+                    >
+                      Coastal Ride
                     </a>
                   </div>
                 </div>
