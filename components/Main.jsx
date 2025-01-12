@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Slider from '../components/Slider';
+import PhotoCarousel from '../components/PhotoCarousel';
 export default function Main() {
   return (
     <section className='text-black body-font'>
@@ -59,6 +59,20 @@ export default function Main() {
               'Our Chikmagaluru ride tested our skills as we conquered the steep climbs of Mullayanagiri, Karnataka’s highest peak.',
             link: '/chikmagaluru',
           },
+          {
+            title: 'Coastal Ride',
+            imgSrc: '/images/coastal4.jpeg',
+            description:
+              ' Our thrilling coastal ride took us on a journey through the breathtaking beauty of South India’s coastline.',
+            link: '/coastal-ride',
+          },
+          {
+            title: 'Sikkim',
+            imgSrc: '/images/sikkim7.jpeg',
+            description:
+              '  Our journey through Sikkim in December was nothing short of magical..',
+            link: '/sikkim',
+          },
         ].map(({ title, imgSrc, description, link }) => (
           <Link href={link} key={title}>
             <div className='bg-gray-800 rounded-lg p-4 md:p-6 lg:p-8 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 cursor-pointer'>
@@ -79,7 +93,7 @@ export default function Main() {
       </div>
 
       <div className='pt-32 pb-32 max-w-6xl mx-auto p-5'>
-        <Slider />
+        <PhotoCarousel />
       </div>
     </section>
   );
