@@ -19,7 +19,7 @@ export default function Main() {
         <img
           className='object-cover object-center w-full md:w-3/4 mb-10 border   shadow-md rounded-3xl'
           alt='Placeholder Image'
-          src='/images/main2.jpeg'
+          src='/images/main1.jpeg'
         />
       </div>
 
