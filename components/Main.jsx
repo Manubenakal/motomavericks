@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import PhotoCarousel from '../components/PhotoCarousel';
+import JoinClub from './JoinClub';
+import FollowInstagram from './FollowInstagram';
+import RidesGrid from './RidesGrid';
 export default function Main() {
   return (
     <section className='text-black body-font'>
@@ -16,7 +19,7 @@ export default function Main() {
         <img
           className='object-cover object-center w-full md:w-3/4 mb-10 border   shadow-md rounded-3xl'
           alt='Placeholder Image'
-          src='/images/main1.jpeg'
+          src='/images/main2.jpeg'
         />
       </div>
 
@@ -28,69 +31,13 @@ export default function Main() {
         exploring the most scenic and challenging routes across South India.
       </p>
 
-      {/* Card Section */}
-      <div className='pt-12 pb-24 max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 p-8 lg:grid-cols-4 gap-8'>
-        {[
-          {
-            title: 'Coorg 2023',
-            imgSrc: '/images/coorg.avif',
-            description:
-              'In 2023, we rode through Coorg’s scenic Western Ghats, navigating winding roads, misty hills, and coffee plantations.',
-            link: '/coorg',
-          },
-          {
-            title: 'Wayanad-Ooty 2023',
-            imgSrc: '/images/ooty.jpg',
-            description:
-              'Our 2023 ride to Wayanad and Ooty was filled with thrilling mountain passes and sharp curves.',
-            link: '/wayanad-ooty',
-          },
-          {
-            title: 'Kodaikanal-Munnar 2024',
-            imgSrc: '/images/kk3.jpeg',
-            description:
-              'In 2024, we took on the steep, curvy roads to Kodaikanal, enjoying its serene lakes and forests.',
-            link: '/kodaikanal-munnar',
-          },
-          {
-            title: 'Chikmagaluru',
-            imgSrc: '/images/chikmagaluru1.jpeg',
-            description:
-              'Our Chikmagaluru ride tested our skills as we conquered the steep climbs of Mullayanagiri, Karnataka’s highest peak.',
-            link: '/chikmagaluru',
-          },
-          {
-            title: 'Coastal Ride',
-            imgSrc: '/images/coastal4.jpeg',
-            description:
-              ' Our thrilling coastal ride took us on a journey through the breathtaking beauty of South India’s coastline.',
-            link: '/coastal-ride',
-          },
-          {
-            title: 'Sikkim',
-            imgSrc: '/images/sikkim7.jpeg',
-            description:
-              '  Our journey through Sikkim in December was nothing short of magical..',
-            link: '/sikkim',
-          },
-        ].map(({ title, imgSrc, description, link }) => (
-          <Link href={link} key={title}>
-            <div className='bg-gray-800 rounded-lg p-4 md:p-6 lg:p-8 hover:shadow-lg transition-shadow duration-300 transform hover:scale-105 cursor-pointer'>
-              <img
-                className='w-full h-48 md:h-56 lg:h-64 object-cover rounded-md mb-4'
-                src={imgSrc}
-                alt={title}
-              />
-              <h3 className='pt-2 font-semibold text-lg md:text-xl text-white'>
-                {title}
-              </h3>
-              <p className='pt-2 text-sm md:text-md text-gray-200'>
-                {description}
-              </p>
-            </div>
-          </Link>
-        ))}
-      </div>
+
+      
+      <RidesGrid />
+      
+        <JoinClub />
+        <FollowInstagram />
+      
 
       <div className='pt-32 pb-32 max-w-6xl mx-auto p-5'>
         <PhotoCarousel />
